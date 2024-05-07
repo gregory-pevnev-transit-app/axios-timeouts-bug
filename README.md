@@ -79,7 +79,7 @@ This can occur in the following way:
 
 This can be reproduced by running `client.js` which performs 2 requests to the server using 2 axios-clients:
 1. A client with the `timeout` set to 150ms. Upon the request, axios CORRECTLY throws `ECONNABORT`, since it takes 200ms for the server to start sending data.
-2. A client with the `timeout` set to 250ms. Upon the request, axios INCORRECTLY throws `ECONNABORT`, since while it only takes 200ms for the HTTP-Headers to be sent to the client (passing HTTP-Timeout), it takes 300ms for the rest of the response to be sent afterwards, which causes a Socket-Timeout to occur midway.
+2. A client with the `timeout` set to 250ms. Upon the request, axios INCORRECTLY throws `ECONNRESET`, since while it only takes 200ms for the HTTP-Headers to be sent to the client (passing HTTP-Timeout), it takes 300ms for the rest of the response to be sent afterwards, which causes a Socket-Timeout to occur midway.
 
 ## Solution
 
