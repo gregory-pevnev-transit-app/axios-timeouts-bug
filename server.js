@@ -9,7 +9,6 @@ const RESPONSE_DATA = { data: "custom-data" };
 //  Afterwards: 300ms before other packets are sent
 const DATA1_TIMEOUT = 200;
 const DATA2_TIMEOUT = 500;
-const FINISH_TIMEOUT = 800;
 
 async function getGZipBuffer(data) {
   return new Promise(resolve => {
@@ -61,4 +60,4 @@ const server = http.createServer(async (req, res) => {
 // 1s
 server.keepAliveTimeout = 1 * 1000;
 
-server.listen(9999)
+server.listen(9999);
